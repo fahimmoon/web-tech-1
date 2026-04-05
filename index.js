@@ -9,6 +9,18 @@ const logger= (req, res, next) => {
   console.log(`${req.method} ${req.url}`); //call the next middleware function in the stack
   next();
 }
+//another middleware for Auth
+const auth = (req, res, next) => {
+    if(req.query.username === "Fahim"){
+      next();
+    }
+    else{
+      res.send("Unauthorized");
+    }
+ };
+
+
+
 
 
 app.use(logger); //use the logger middleware for all routes
@@ -17,6 +29,15 @@ app.use(logger); //use the logger middleware for all routes
 app.get("/", (req, res) => {    //define a route for the root URL
   res.send(`Welcome to ${req.message}`);  //send a response to the client with the message "Hello, World!"
 });
+
+app.get("/login", auth, (req, res) => {    //define a route for the login page with auth middleware
+  res.send(`welcome, ${req.query.username}`);  //send a response to the client with the message "Hello, World!"
+});
+
+app.get("/about", (req, res) => {    //define a route for the about page
+  res.send(`about us ${req.message}`);  //send a response to the client with the message "Hello, World!"
+});
+
 
 //start the server and listen on the defined port
 

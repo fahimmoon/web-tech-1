@@ -31,4 +31,11 @@ ANOTHER MOEDTHOD
     
         ->middlewear define then its call     
         ->its before route
-                
+        ->next method must used
+
+now another  middlewear
+  Auth 
+   so there are many
+    -> req.boy 
+     // use get in query
+     
