@@ -1,0 +1,34 @@
+npm install express
+npm install -g nodemon
+// best praties
+npm install --save-dev nodemon
+//then in package.json 
+{
+  "scripts": {
+    "dev": "nodemon index.js"
+  }
+}
+
+ANOTHER MOEDTHOD
+ 
+ --watch 
+
+ //middle weare clinet and server
+  -> security
+  ->Auth
+  ->module 
+      
+      //understand        
+            clinet   resquest to server (/posts)
+
+               // multiple middlewear using in module 
+               //app.use(){all respone, resquest are going thurgh here }
+              //app.get("/posts")
+
+              app.use()
+
+            server respone  ( post, post, post)
+    
+        ->middlewear define then its call     
+        ->its before route
+                
